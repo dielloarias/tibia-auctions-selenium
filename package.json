@@ -1,0 +1,25 @@
+{
+	"name": "tibia-auctions-selenium",
+	"version": "1.0.0",
+	"description": "Webscrap Char Bazaar Tibia",
+	"main": "dist/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node dist/index.js"
+	},
+	"keywords": [
+		"Webscrap",
+		"Tibia",
+		"Char",
+		"Bazaar"
+	],
+	"author": "Diello Cardoso de La Paz Arias",
+	"license": "ISC",
+	"dependencies": {
+		"cheerio": "^1.0.0-rc.3",
+		"dotenv": "^8.2.0",
+		"phantomjs": "^2.1.7",
+		"selenium-webdriver": "^4.0.0-alpha.7"
+	},
+	"devDependencies": {}
+}

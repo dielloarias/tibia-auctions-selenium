@@ -14,8 +14,6 @@ enum Professions {
 	SORCERER = 5,
 }
 
-// console.log(WORLD);
-
 export default {
 	PROFESSION: Professions[PROFESSION],
 	LEVEL_MIN: LEVEL_MIN,

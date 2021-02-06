@@ -38,7 +38,7 @@ const varredura = async function () {
 	// const driver = await new webdriver.Builder().forBrowser("firefox").build();
 	const driver = await new webdriver.Builder()
 		.forBrowser("firefox")
-		.setFirefoxOptions(new firefox.Options().headless())
+		// .setFirefoxOptions(new firefox.Options().headless())
 		.build();
 
 	for (let pagina = 1; pagina < 20; pagina++) {

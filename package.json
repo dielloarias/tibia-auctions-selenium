@@ -24,5 +24,7 @@
 		"phantomjs": "^2.1.7",
 		"selenium-webdriver": "^4.0.0-alpha.7"
 	},
-	"devDependencies": {}
+	"devDependencies": {
+		"@types/selenium-webdriver": "^4.0.11"
+	}
 }

@@ -1,3 +1,5 @@
 dist/
 node_modules/
 geckodriver.exe
+src/db/conexoes/auth/
+src/teste*

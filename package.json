@@ -21,10 +21,12 @@
 	"dependencies": {
 		"cheerio": "^1.0.0-rc.3",
 		"dotenv": "^8.2.0",
+		"mysql": "^2.18.1",
 		"phantomjs": "^2.1.7",
 		"selenium-webdriver": "^4.0.0-alpha.7"
 	},
 	"devDependencies": {
+		"@types/mysql": "^2.15.17",
 		"@types/selenium-webdriver": "^4.0.11"
 	}
 }

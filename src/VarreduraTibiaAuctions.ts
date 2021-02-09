@@ -6,8 +6,12 @@ const { Key, until, By, Condition } = require("selenium-webdriver");
 const webdriver = require("selenium-webdriver");
 const firefox = require("selenium-webdriver/firefox");
 
+export interface VarreduraTibiaAuctionsDelegate {
+    personagem(personagem: CharacterInfo);
+}
+
 export class VarreduraTibiaAuctions {
-    public delegate = {
+    public delegate: VarreduraTibiaAuctionsDelegate = {
         personagem(personagem: CharacterInfo) {
             console.log(personagem);
         },

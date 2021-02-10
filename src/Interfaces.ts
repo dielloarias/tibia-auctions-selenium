@@ -8,4 +8,5 @@ export interface CharacterInfo {
 	vocation?: string;
 	sex?: string;
 	world?: string;
+	obs?: string;
 }

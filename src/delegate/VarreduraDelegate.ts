@@ -43,7 +43,7 @@ function converteDataTibia(dataSite: string): string {
     return value;
 }
 
-const VarreduraDelegate: VarreduraTibiaAuctionsDelegate = {
+const VarreduraDelegateCurrentTrades: VarreduraTibiaAuctionsDelegate = {
     personagem(personagem: CharacterInfo) {
         const obs = `Auction Start: ${personagem.auctionStart} / Auction End: ${personagem.auctionEnd}`;
         const start = converteDataTibia(personagem.auctionStart as string);
@@ -62,4 +62,23 @@ const VarreduraDelegate: VarreduraTibiaAuctionsDelegate = {
     },
 };
 
-export { VarreduraDelegate };
+const VarreduraDelegatePastTrades: VarreduraTibiaAuctionsDelegate = {
+    personagem(personagem: CharacterInfo) {
+        const obs = `Auction Start: ${personagem.auctionStart} / Auction End: ${personagem.auctionEnd}`;
+        const start = converteDataTibia(personagem.auctionStart as string);
+        const end = converteDataTibia(personagem.auctionEnd as string);
+
+        personagem.auctionStart = start;
+        personagem.auctionEnd = end;
+        personagem.obs = obs;
+
+        const connection: mysql.Connection = new ConnectionFactory();
+        const dao = new AuctionDAO(connection);
+
+        dao.adicionaPastTrades(personagem);
+        console.log(new Date(), personagem.characterName);
+        connection.end();
+    },
+};
+
+export { VarreduraDelegateCurrentTrades, VarreduraDelegatePastTrades };

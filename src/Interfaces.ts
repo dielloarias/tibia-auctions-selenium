@@ -9,4 +9,5 @@ export interface CharacterInfo {
 	sex?: string;
 	world?: string;
 	obs?: string;
+	sold?: string | boolean;
 }

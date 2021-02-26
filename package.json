@@ -7,7 +7,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "npm run currentTrades",
 		"currentTrades": "node dist/index.js",
-		"pastTrades": "node dist/historico.js"
+		"pastTrades": "node dist/historico.js",
+		"build": "tsc"
 	},
 	"keywords": [
 		"Webscrap",

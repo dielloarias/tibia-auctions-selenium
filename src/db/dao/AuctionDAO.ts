@@ -52,7 +52,7 @@ export class AuctionDAO {
 
     adicionaPastTrades(personagem: CharacterInfo) {
         let sql = "";
-        sql += "INSERT IGNORE INTO DB_TIBIA_AUCTIONS.TB_AUCTIONS_HISTORY ";
+        sql += "INSERT INTO DB_TIBIA_AUCTIONS.TB_AUCTIONS_HISTORY ";
         sql += "(";
         sql += "	  DT_REG";
         sql += "	, CHARACTER_NAME";
@@ -65,9 +65,13 @@ export class AuctionDAO {
         sql += "	, CURRENT_BID";
         sql += "	, OBS";
         sql += "	, SOLD";
+        sql += "	, TX_STATUS";
         sql += ")";
         sql += " ";
-        sql += "VALUES (NOW(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+        sql += "VALUES (NOW(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+        sql += " ON DUPLICATE KEY UPDATE TX_STATUS = ? ";
+        sql += "                       , SOLD = ?";
+        sql += "                       , DT_REG = NOW()";
         sql += ";";
 
         const values = [
@@ -80,6 +84,9 @@ export class AuctionDAO {
             personagem.auctionEnd,
             personagem.currentBid,
             personagem.obs,
+            personagem.sold,
+            personagem.status,
+            personagem.status,
             personagem.sold,
         ];
 

@@ -17,4 +17,5 @@ export interface CharacterInfo {
     world?: string;
     obs?: string;
     sold?: string | boolean;
+    status?: string;
 }

@@ -218,6 +218,10 @@ export class VarreduraTibiaAuctions {
                     .findElement(By.className("ShortAuctionDataLabel"))
                     .getText();
 
+                const status: string = await leilao
+                    .findElement(By.className("AuctionInfo"))
+                    .getText();
+
                 const sold = label.includes("Winning Bid");
 
                 const charinfo = characterInfo(auctionHeader);
@@ -226,6 +230,7 @@ export class VarreduraTibiaAuctions {
                 charinfo.currentBid = Number(currentBid);
                 charinfo.date = new Date();
                 charinfo.sold = sold;
+                charinfo.status = status;
 
                 arr.push(charinfo);
 
